@@ -35,6 +35,7 @@ public class ThreadPool extends HystrixCommand<String> {
 
     @Override
     protected String run() throws Exception {
+        // 加上这行代码使之超时，走到com.jdr.springcloud.hystrix.isolation.ThreadPool.getFallback
         TimeUnit.SECONDS.sleep(2);
         System.out.println(this.threadName + " into run...");
         return this.threadName;
