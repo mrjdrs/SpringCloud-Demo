@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "ad-model")
 public interface AdRemoteService {
 
-    @GetMapping("/getUserAd/{account}")
-    String login(@PathVariable String account);
+    @GetMapping("/ad/getUserAd/{account}")
+    String login(@PathVariable(name = "account") String account);
 }

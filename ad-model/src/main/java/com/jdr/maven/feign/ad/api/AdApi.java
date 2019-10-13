@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdApi {
 
     @GetMapping("/getUserAd/{account}")
-    public String login(@PathVariable String account) {
+    public String login(@PathVariable(name = "account") String account) {
         return "这是" + account + "的广告";
     }
 }
