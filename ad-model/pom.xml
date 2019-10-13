@@ -8,10 +8,10 @@
         <version>1.5.20.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.jdr.maven.feign</groupId>
-    <artifactId>customer-model</artifactId>
+    <groupId>com.jdr.maven.feign.ad</groupId>
+    <artifactId>ad-model</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>customer-model</name>
+    <name>ad-model</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -32,7 +32,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>

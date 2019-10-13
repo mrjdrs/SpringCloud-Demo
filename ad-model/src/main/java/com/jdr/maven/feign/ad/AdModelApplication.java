@@ -1,17 +1,15 @@
-package com.jdr.maven.feign.customer;
+package com.jdr.maven.feign.ad;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"com.jdr.maven.feign.customer"})
-public class CustomerModelApplication {
+public class AdModelApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CustomerModelApplication.class, args);
+        SpringApplication.run(AdModelApplication.class, args);
     }
 
 }

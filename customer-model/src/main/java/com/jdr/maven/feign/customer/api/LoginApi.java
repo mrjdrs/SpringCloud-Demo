@@ -1,6 +1,8 @@
 package com.jdr.maven.feign.customer.api;
 
 import com.jdr.maven.feign.customer.model.UserDTO;
+import com.jdr.maven.feign.customer.remote.AdRemoteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,9 @@ public class LoginApi {
         }
     }
 
+    @Autowired
+    private AdRemoteService adRemoteService;
+
     @GetMapping("/login/{account}/{password}")
     public String login(@PathVariable String account, @PathVariable String password) {
         UserDTO userDTO = USER_INFO.get(account);
@@ -38,7 +43,8 @@ public class LoginApi {
         }
 
         // 调用广告接口
-
+        String adResult = adRemoteService.login(account);
+        System.err.println(adResult);
 
         return "SUCCESS";
     }
