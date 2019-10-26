@@ -20,4 +20,13 @@ public class ProcessorController {
     public boolean testProcessor(@PathVariable("message") String message) {
         return processorService.send(message);
     }
+
+//    /**
+//     * RabbitMQ不支持消息分流
+//     */
+//    @GetMapping("/testMessageShunt/{type}")
+//    public boolean testMessageShunt(@PathVariable("type") String type) {
+//        String header = "a".equalsIgnoreCase(type) ? "msg1" : "msg2";
+//        return processorService.send(type, header);
+//    }
 }

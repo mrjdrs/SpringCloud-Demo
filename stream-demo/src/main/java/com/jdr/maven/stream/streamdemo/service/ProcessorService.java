@@ -20,6 +20,12 @@ public class ProcessorService {
         return processor.output().send(MessageBuilder.withPayload(message).build());
     }
 
+    public boolean send(String message, String headerContent) {
+        return processor.output().send(MessageBuilder.withPayload(message)
+                .setHeader("contentType", headerContent)
+                .build());
+    }
+
     public boolean subscribe(MessageHandler handler) {
         return processor.input().subscribe(handler);
     }
